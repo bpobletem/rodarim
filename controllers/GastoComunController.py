@@ -16,3 +16,11 @@ class GastoComunController:
     @staticmethod
     def registrar_pago(gasto_comun_id):
         return GastoComunService.registrar_pago(gasto_comun_id)
+
+    @staticmethod
+    def get_gastos_pendientes(numero_departamento):
+        return GastoComunService.get_gastos_pendientes(numero_departamento)
+    
+    @staticmethod
+    def get_gastos_pagados(numero_departamento):
+        return GastoComunService.get_gastos_pagados(numero_departamento)

@@ -33,3 +33,16 @@ class GastoComunView:
         
         return jsonify(gasto_comun.serialize())
     
+    @staticmethod
+    @gasto_comun_blueprint.route('/gasto_comun/pendientes/<int:numero_departamento>', methods=['GET'])
+    def get_gastos_pendientes(numero_departamento):
+        gastos_pendientes = GastoComunController.get_gastos_pendientes(numero_departamento)
+        
+        return jsonify([gasto_comun.serialize() for gasto_comun in gastos_pendientes])
+    
+    @staticmethod
+    @gasto_comun_blueprint.route('/gasto_comun/pagados/<int:numero_departamento>', methods=['GET'])
+    def get_gastos_pagados(numero_departamento):
+        gastos_pagados = GastoComunController.get_gastos_pagados(numero_departamento)
+        
+        return jsonify([gasto_comun.serialize() for gasto_comun in gastos_pagados])

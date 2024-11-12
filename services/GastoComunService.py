@@ -33,3 +33,11 @@ class GastoComunService:
         db.session.commit()
         
         return gasto
+    
+    @staticmethod
+    def get_gastos_pagados(numero_departamento):
+        return GastoComunModel.query.filter_by(numero_departamento=numero_departamento).filter(GastoComunModel.fecha_pago.isnot(None)).all()
+    
+    @staticmethod
+    def get_gastos_pendientes(numero_departamento):
+        return GastoComunModel.query.filter_by(numero_departamento=numero_departamento).filter(GastoComunModel.fecha_pago.is_(None)).all()
