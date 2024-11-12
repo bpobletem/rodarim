@@ -15,8 +15,4 @@ class GastoComunController:
     
     @staticmethod
     def registrar_pago(gasto_comun_id):
-        return GastoComunService.update_gasto_comun(gasto_comun_id)
-    
-    @staticmethod
-    def delete_gasto_comun(gasto_comun_id):
-        return GastoComunService.delete_gasto_comun(gasto_comun_id)
+        return GastoComunService.registrar_pago(gasto_comun_id)
