@@ -1,15 +1,7 @@
 # Rodarim
 
-1. Requirements
-pip install -r requirements.txt
+1. Create env
 
-2. DB
-flask db init
-flask db migrate
-flask db upgrade
--- Despues de hacer cambios solo usar:
-flask db migrate
-flask db upgrade
+2. pip install Flask Flask-SQLAlchemy
 
-3. Run server
-py run.py
+3. py run.py
