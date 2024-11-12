@@ -6,9 +6,11 @@ class GastoComunService:
     def get_all_gasto_comun():
         return GastoComunModel.query.all()
     
+    @staticmethod
     def create_gasto_comun(fecha_vencimiento, costo, fecha_pago, numero_departamento, periodo):
         fecha_vencimiento = datetime.strptime(fecha_vencimiento, '%Y-%m-%d').date() if fecha_vencimiento else None
         fecha_pago = datetime.strptime(fecha_pago, '%Y-%m-%d').date() if fecha_pago else None
+        periodo = datetime.strptime(periodo, '%Y-%m').date() if periodo else None
 
         nuevo_gasto = GastoComunModel(
             fecha_vencimiento=fecha_vencimiento,
