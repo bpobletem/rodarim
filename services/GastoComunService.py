@@ -25,6 +25,7 @@ class GastoComunService:
         
         return nuevo_gasto
     
+    @staticmethod
     def registrar_pago(gasto_comun_id):
         gasto = GastoComunModel.query.get(gasto_comun_id)
         gasto.fecha_pago = datetime.now()
