@@ -13,7 +13,7 @@ class GastoComunView:
         return jsonify([gasto_comun.serialize() for gasto_comun in gastos_comunes])
     
     @staticmethod
-    @gasto_comun_blueprint.route('/gasto_comun/create', methods=['POST'])
+    @gasto_comun_blueprint.route('/gasto_comun', methods=['POST'])
     def create_gasto_comun():
         data = request.json
         fecha_vencimiento = data.get('fecha_vencimiento')
